@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Appliances</h1>
+    </div>
+    <div class="panel-body">
+    <!-- <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search"> -->
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Serial Number</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Status</th>
+                    <th>Date Bought</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<!-- <tr *ngFor="let appliance of appliances | async my-filter: queryString "> -->
+                <tr *ngFor="let appliance of appliances | async">
+                    <td>{{appliance.serialNumber}}</td>
+                    <td>{{appliance.brand}}</td>
+                    <td>{{appliance.model}}</td>
+                    <td>{{appliance.status ? "Active" : "Inactive"}}</td>
+                    <td>{{appliance.dateBought | date : "dd-MM-y"}}</td>
+                    <td><button (click)="deleteAppliance(appliance.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+</div>

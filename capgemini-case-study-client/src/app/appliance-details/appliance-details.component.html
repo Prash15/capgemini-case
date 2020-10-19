@@ -1,0 +1,26 @@
+<div *ngIf="appliance">
+    <div>
+        <label>Serial Number: </label> {{appliance.serialNumber}}
+    </div>
+    <div>
+        <label>Brand: </label> {{appliance.brand}}
+    </div>
+    <div>
+        <label>Model: </label> {{appliance.model}}
+    </div>
+    <div>
+        <label>Status: </label> {{appliance.status}}
+    </div>
+
+    <span class="button is-small btn-primary" *ngIf='appliance.active' (click)='updateActive(false)'>Inactive</span>
+
+    <span class="button is-small btn-primary" *ngIf='!appliance.active' (click)='updateActive(true)'>Active</span>
+    
+     <div>
+        <label>Date Bought: </label> {{appliance.dateBought}}
+    </div>
+
+    <span class="button is-small btn-danger" (click)='deleteAppliance()'>Delete</span>
+
+    <hr/>
+</div>
